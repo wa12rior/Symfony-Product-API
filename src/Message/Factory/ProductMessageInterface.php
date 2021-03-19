@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Message;
+namespace App\Message\Factory;
 
 use App\Entity\Product;
 

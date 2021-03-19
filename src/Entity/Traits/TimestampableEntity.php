@@ -2,17 +2,19 @@
 
 namespace App\Entity\Traits;
 
+use Doctrine\ORM\Mapping as ORM;
+
 trait TimestampableEntity
 {
+    /**
+     * @ORM\Column(name="created_at", type="datetime")
+     */
     protected \DateTime $createdAt;
 
+    /**
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
     protected \DateTime $updatedAt;
-
-    public function __construct()
-    {
-        $this->createdAt = new \DateTime();
-        $this->updatedAt = new \DateTime();
-    }
 
     public function setCreatedAt($createdAt): void
     {

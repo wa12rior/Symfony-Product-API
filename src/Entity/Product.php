@@ -3,12 +3,12 @@
 namespace App\Entity;
 
 use App\Entity\Traits\TimestampableEntity;
-use App\Message\ProductMessageInterface;
+use App\Message\Factory\ProductMessageInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Ramsey\Uuid\Uuid;
 
 /**
-* @ORM\Entity(repositoryClass="ProductRepository")
+* @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
  */
 class Product
 {
@@ -26,7 +26,7 @@ class Product
     private string $name;
 
     /**
-     * @ORM\Column(nullable="true")
+     * @ORM\Column(nullable=true)
      */
     private ?string $description;
 
@@ -41,6 +41,9 @@ class Product
         $this->name = $name;
         $this->ptu = $ptu;
         $this->description = $description;
+
+        $this->createdAt = new \DateTime();
+        $this->updatedAt = new \DateTime();
     }
 
     public function getId(): string
