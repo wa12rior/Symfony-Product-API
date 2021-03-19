@@ -12,11 +12,12 @@ trait TimestampableEntity
     protected \DateTime $createdAt;
 
     /**
+     * @var \DateTime
      * @ORM\Column(name="updated_at", type="datetime")
      */
     protected \DateTime $updatedAt;
 
-    public function setCreatedAt($createdAt): void
+    public function setCreatedAt(\DateTime $createdAt): void
     {
         $this->createdAt = $createdAt;
     }
@@ -26,7 +27,7 @@ trait TimestampableEntity
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt($updatedAt): void
+    public function setUpdatedAt(\DateTime $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
     }

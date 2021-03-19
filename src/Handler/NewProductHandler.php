@@ -16,7 +16,7 @@ class NewProductHandler implements MessageHandlerInterface
         $this->entityManager = $entityManager;
     }
 
-    public function __invoke(NewProduct $product)
+    public function __invoke(NewProduct $product): void
     {
         $newProduct = new Product($product->getName(), $product->getPtu(), $product->getDescription());
 

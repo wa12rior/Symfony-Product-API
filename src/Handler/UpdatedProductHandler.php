@@ -15,7 +15,7 @@ class UpdatedProductHandler implements MessageHandlerInterface
         $this->entityManager = $entityManager;
     }
 
-    public function __invoke(UpdatedProduct $updatedProduct)
+    public function __invoke(UpdatedProduct $updatedProduct): void
     {
         $originalProduct = $updatedProduct->getOriginalProduct();
         $originalProduct->updateFromMessage($updatedProduct);

@@ -9,6 +9,9 @@ class UpdatedProduct extends ProductMessageFactory
 {
     private Product $originalProduct;
 
+    /**
+     * @param non-empty-array<string> $updatedValues
+     */
     public function __construct(Product $product, array $updatedValues)
     {
         $product->setName($updatedValues['name']);

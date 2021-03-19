@@ -28,9 +28,14 @@ class ProductController extends AbstractController
 
     /**
      * @Route("/products/add", name="products_add", methods={"POST"})
+     *
      */
     public function createAction(Request $request): JsonResponse
     {
+        if (!$request->get('name') || $request->get('ptu') || $request->get('description')) {
+            return new JsonResponse(['result' => 'not found'], Response::HTTP_NOT_FOUND);
+        }
+
         $this->dispatchMessage(
             new NewProduct(new Product($request->get('name'), $request->get('ptu'), $request->get('description')))
         );
