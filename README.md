@@ -2,8 +2,7 @@
 
 ## Installation
 
-```composer install```
-```php bin/console do:mi:mi```
+```composer install && php bin/console do:mi:mi```
 
 ## How to run
 
